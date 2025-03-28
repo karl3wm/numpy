@@ -1,0 +1,9 @@
+`from_dlpack` can return writeable arrays
+-------------------------------------------
+
+A user can now write back into underlying data through the array returned from
+`from_dlpack` when using a modern DLPack 1.0 producer.
+
+The ``DLPACK_FLAG_BITMASK_READ_ONLY`` flag must be available and unset in the
+DLPack.  For compatibility, the old behavior of always returning readonly
+arrays is retained when processing older DLPacks without this flag.
